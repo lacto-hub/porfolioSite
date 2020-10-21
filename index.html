@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css読み込み -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- faviconの読み込み -->
+    <link rel="shortcut icon" href="./images/favicon.jpg">
+    <!-- drawer.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
+    <!-- fontawesomeの読み込み -->
+    <link href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" rel="stylesheet">
+    <!-- drawer.jsの読み込み -->
+    <!-- jquery & iScroll -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+    <!-- drawer.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+    <!-- OGP setting -->
+    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# website: http://ogp.me/ns/ website#">
+      <meta property="og:url" content="https://lacto-pro.com" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="ポートフォリオサイト" />       
+      <meta property="og:description" content="HP制作を始めました。HPを作りたい方やもっとおしゃれにしたいなどありましたらご依頼ください。完成イメージはこちらのポートフォリオサイトからご覧いただけます。" />
+      <meta property="og:site_name" content="Lacto's Portfolio" />     
+      <meta property="og:image" content="https://lacto-pro.com/images/lacto's_portfolio_ogp.png" />
+      <meta property="fb:app_id" content="2718781644889543">
+  </head>   
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" /> <!--①-->
+  <meta name="twitter:site" content="@bb12141051" /> <!--②-->
+    <title>Lacto's Protfolio</title>
+</head>
+<body class="drawer drawer--right">
+  <header class="header">
+    <div class="container">
+        <a href="#home" class="header-logo header-link">Lacto</a>
+        <button type="button" class="drawer-toggle drawer-hamburger is-sp">
+          <span class="sr-only">toggle navigation</span>
+          <span class="drawer-hamburger-icon"></span>
+        </button>
+        <div class="drawer-overlay header-overlay"></div>
+        <nav class="drawer-nav header-nav">
+          <ul class="drawer-menu header-nav-list">
+            <li><a class="nav-list header-link" href="#service">Service</a></li>
+            <li><a class="nav-list header-link" href="#price">Price</a></li>
+            <li><a class="nav-list header-link" href="#philosophy">Philosophy</a></li>
+            <li><a class="nav-list header-link" href="#works">Works</a></li>
+            <li><a class="nav-list header-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+    </div>
+    </header>
+    <main>
+      <div class="hero-area" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <div class="hero-area-contents">
+            <div class="hero-icon-area">
+              <img src="./images/hero-icon.png" alt="ヒーローエリアのアイコン">
+            </div>
+            <div class="hero-text-area">
+              <p class="my-name">片平 義也 (Lacto)</p>
+              <p class="my-info">岡山県でweb制作活動をしています。<br>北海道大学大学院(専攻：創薬化学)を修了。<br>『神は細部に宿る』をモットーに1pxの妥協も許さない 繊細なデザインとコーディングでお客様の利益に貢献します。<br>【スキル】<br>HTML/CSS, JavaScript(jQuery), php, WordPress<br>Photoshop, Illustrator, Xd</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="service">
+        <div class="container">
+          <h1 class="section-title" id="service">Service</h1>
+          <div class="service-contents-area">
+            <div class="lp-contents service-area">
+              <div class="contents-area">
+                <div class="service-img-container">
+                  <img src="./images/service-lp.jpg" alt="lpの画像　">
+                  <h2 class="service-contents-title">LP制作</h2>
+                </div>
+              </div>
+              <p class="service-text">デザインからHTML/CSSコーディング、<br class="is-pc">レスポンシブ対応に加え、表示速度の高速化など<br class="is-pc">コンバージョンを意識した設計を行うことで、<br class="is-pc">収益化に貢献いたします。</p>
+            </div>
+            <div class="wordpress-contents service-area">
+              <div class="contents-area">
+                <div class="service-img-container">
+                  <img src="./images/service-wordpress.jpg" alt="lpの画像　">
+                  <h2 class="service-contents-title">WordPress</h2>
+                </div>
+              </div>
+              <p class="service-text">お客様のご要望に合わせてオリジナルテーマ作成<br class="is-pc">もしくは既存テーマを利用した制作をいたします。<br class="is-pc">初心者の方でも編集しやすいよう、マニュアルも<br class="is-pc">ご用意しております。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="price">
+        <div class="container">
+          <h1 class="section-title" id="price">Price</h1>
+          <div class="price-table">
+            <div class="table-row">
+              <p class="service-item">コーディング(トップ)</p>
+              <p class="table-price">15,000円〜</p>
+            </div>
+            <div class="table-row">
+              <p class="service-item">コーディング(下層)</p>
+              <p class="table-price">5,000円〜</p>
+            </div>
+            <div class="table-row">
+              <p class="service-item">レスポンシブ化</p>
+              <p class="table-price">10,000円〜</p>
+            </div>
+            <div class="table-row">
+              <p class="service-item">WordPress化</p>
+              <p class="table-price">20,000円〜</p>
+            </div>
+            <div class="table-row">
+              <p class="service-item">LP制作(1ページ)デザイン込</p>
+              <p class="table-price">80,000円〜</p>
+            </div>
+            <div class="table-row">
+              <p class="service-item">WordPressサイト制作<br>(既存テーマ使用)</p>
+              <p class="table-price">50,000円〜</p>
+            </div><div class="table-row">
+              <p class="service-item">WordPressサイト制作<br>(オリジナルテーマ作成)</p>
+              <p class="table-price">100,000円〜</p>
+            </div>
+            <p class="price-caution">※こちらの金額は目安になります。作業量によって増減いたしますのであらかじめご了承ください。</p>
+          </div>
+          <div class="util-link-container">
+            <a href="#contact" class="util-link-btn">お見積もりをする</a>
+          </div>
+        </div>
+      </section>
+      <section class="philosophy">
+        <div class="container">
+          <h1 class="section-title" id="philosophy">Philosophy</h1>
+          <div class="philosophy-contents-area">
+            <div class="philosophy-contents philosophy-first">
+              <div class="philosophy-overlay"></div>
+              <h3 class="philosophy-title"><span>01</span>納期は厳守いたします</h3> 
+              <p class="philosophy-text">納期に遅れるということはお客様のビジネスチャンスを奪う可能性が あるという意識を持って、進捗を共有しながら計画的に作業を進め、 確実に納期までにお届けいたします。 お仕事を受ける段階で、納期に間に合う可能性が低いと判断した時は、 無責任にお仕事を受けるのではなく、間に合わない可能性が高いことを ご説明した上で、お断りさせていただきます。</p>
+            </div>
+            <div class="philosophy-contents philosophy-second">
+              <div class="philosophy-overlay"></div>
+              <h3 class="philosophy-title"><span>02</span>品質にこだわり抜きます</h3> 
+              <p class="philosophy-text">端末やブラウザ、画面幅の違いによってデザインの崩れがないこと、 アニメーションやお問い合わせフォームの挙動に異常がないことなど 実機を用いて丁寧に確認してから納品いたします。 上記の基本的な品質の担保に加えて、表示速度の向上や導線設計など、 常にユーザー視点の制作を心がけ、コンバージョンの高い利益に繋がる サイトを制作いたします。</p>
+            </div>
+            <div class="philosophy-contents philosophy-third">
+              <div class="philosophy-overlay"></div>
+              <h3 class="philosophy-title"><span>03</span>『三方良し』を目指します</h3> 
+              <p class="philosophy-text">お客様と私の利益になるのはもちろんのこと、webサイトを通して 素晴らしい商品・サービスを世の中に広めることで社会貢献にもなる、 そんな『売り手良し』、『買い手良し』、『世間良し』を目指します。 万が一、誰かに損失を与えるような商品・サービスを販売する目的の Webサイト制作のご依頼があった場合には、お断りしております。 お客様にも世の中にも誠実に向き合ってお仕事をいたします。</p>
+            </div> 
+          </div>
+        </div>
+      </section>
+      <section class="works">
+        <div class="container">
+          <h1 class="section-title" id="works">Works</h1>
+          <p class="works-description">Basic認証をかけていますので、お手数ですが<br class="is-pc">Id・パスワード共に『<span>lacto</span>』と入力してください。</p>
+          <div class="works-container">
+            <a href="https://lacto-pro.com/practice1/" class="works-item">
+              <img src="./images/works1.png" alt="制作実績の画像">
+              <div class="works-overlay"></div>
+              <div class="works-detail">
+                <p class="work-category">LP制作</p>
+                <h4 class="work-title">模写作品<br>『練習用ページ1』</h4>
+                <p class="duration">制作期間 2日間</p>
+              </div>
+            </a>
+            <a href="https://lacto-pro.com/practice2/" class="works-item">
+              <img src="./images/works2.png" alt="制作実績の画像">
+              <div class="works-overlay"></div>
+              <div class="works-detail">
+                <p class="work-category">LP制作</p>
+                <h4 class="work-title">模写作品<br>『練習用ページ2』</h4>
+                <p class="duration">制作期間 5日間</p>
+              </div>
+            </a>
+            <a href="https://lacto-pro.com/sobolon/" class="works-item">
+              <img src="./images/sobolon.png" alt="sobolonの画像">
+              <div class="works-overlay"></div>
+              <div class="works-detail">
+                <p class="work-category">LP制作</p>
+                <h4 class="work-title">模写作品<br>『sobolon』</h4>
+                <p class="duration">制作期間 3日間</p>
+              </div>
+            </a>
+            <a href="https://lacto-pro.com/" class="works-item">
+              <img src="./images/portfoliosite.png" alt="ポートフォリオサイトの画像">
+              <div class="works-overlay"></div>
+              <div class="works-detail">
+                <p class="work-category">LP制作</p>
+                <h4 class="work-title">『Lacto's Portfolio』</h4>
+                <p class="duration">制作期間 デザイン(Xd使用) 3日間<br>コーディング 2日間</p>
+              </div>
+            </a>
+            <a href="https://lacto-pro.com/wp-practice1/" class="works-item">
+              <img src="./images/wordpress-practice1.png" alt="WordPress制作の画像">
+              <div class="works-overlay"></div>
+              <div class="works-detail">
+                <p class="work-category">WordPress制作</p>
+                <h4 class="work-title">模写作品<br>『完全版マハーバーラタ』</h4>
+                <p class="duration">制作期間 2週間</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="contact">
+        <div class="container">
+          <h1 class="section-title" id="contact">Contact</h1>
+          <p class="contact-description">サイト制作のご相談・お見積もりはもちろんのこと、<br class="is-pc">お客様の様々な疑問にお応えいたしますので、<br class="is-pc">どんな些細なことでもお気軽にご連絡くださいませ。</p>
+          <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc9rL_quhX5vl4on6hgHfLEXkBGcL56Y44dBMAkhiNoxUHIbw/formResponse" method="post" id="js-form">
+            <div class="contact-info">
+              <input name="entry.83593509" type="text" class="name" placeholder="お名前 / 会社名" required>
+              <input name="emailAddress" type="email" class="email" placeholder="メールアドレス" required>
+            </div>
+            <div class="contact-title-area">
+              <input name="entry.1186001782" type="text" class="contact-title" placeholder="タイトル">
+            </div>
+            <div class="contact-message-area">
+              <textarea name="entry.864849555" class="message" placeholder="お問い合わせ内容" required></textarea>
+            </div>
+            <div class="submit util-link-container">
+              <button class="submit-btn util-link-btn" id="js-submit">送信</button>
+            </div>
+          </form>
+          <div id="js-success" class="contact-message">
+              <p>送信完了しました。 ありがとうございました。</p>
+          </div>
+          <div id="js-error" class="contact-message -error">
+              <p>送信に失敗しました。 ページを更新して再度送信してください。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <a href="#home" class="footer-logo">Lacto</a>
+        <div class="footer-contents">
+          <div class="sns-icon">
+            <a href="" class="facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/bb12141051" class="twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+          <p class="copyright">&copy; Copyright Lacto All Right Reserved.</p>
+        </div>
+      </div>
+      <div class="totop">
+        <i class="fas fa-arrow-circle-up"></i>
+      </div>
+    </footer>
+    <script src="./JS/script.js"></script>
+  </body>
+</html>
