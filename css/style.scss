@@ -1,0 +1,839 @@
+@charset "UTF-8";
+//マップ型変数breakpointsを定義
+$breakpoints: (
+//キー　　値
+ 'sm': 'screen and (max-width: 767px)',
+ 'md': 'screen and (min-width: 768px)',
+ 'tb': 'screen and (max-width: 1080px)'
+) !default;
+
+//メディアクエリ用のmixinを定義。デフォ値はmd
+@mixin mq($breakpoint: md) {
+//map-get(マップ型変数, キー)で値を取得
+  @media #{map-get($breakpoints, $breakpoint)} {
+    //この中をカスタムできる
+    @content;
+  }
+}
+
+// 変数
+$font-color: #6C757D;
+$title-color: #0A070E;
+$theme-color: #FBFBFD;
+$accent-color: #0171E3;
+$font-size: 18px;
+
+/*==========================================================
+共通
+==========================================================*/
+@include mq(sm) {
+  .is-pc {
+      display: none !important;
+  }
+}
+@include mq(md) {
+  .is-sp {
+      display: none !important;
+  }
+}
+
+body {
+  color: $font-color;
+  font-size: $font-size;
+  line-height: 32px;
+  font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+}
+
+section {
+  padding-bottom: 100px;
+  @include mq(sm) {
+    padding-bottom: 50px; 
+  }
+}
+
+.section-title {
+  font-size: 40px;
+  font-weight: bold;
+  color: $title-color;
+  line-height: 40px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include mq(sm) {
+    font-size: 32px;
+  }
+}
+
+.container {
+  width: 84.375%;
+  max-width: 1080px;
+  margin: auto;
+  @include mq(sm) {
+    width: 90%;
+
+  }
+}
+
+.util-link-container {
+  text-align: center;
+  .util-link-btn {
+    font-size: 24px;
+    font-family: "arial", sans-serif;
+    color: $theme-color;
+    padding: 28px 39px;
+    text-decoration: none;
+    background-color: $accent-color;
+    border-radius: 12px;
+    display: inline-block;
+    transition: all .5s;
+    &:hover {
+      cursor: pointer;
+      opacity: .8;
+      @include mq(sm) {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/*==========================================================
+header
+==========================================================*/
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  z-index: 500;
+  transition: all .7s;
+  @include mq(sm) {
+    height: 70px; 
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    .header-logo {
+      font-size: 48px;
+      color: $title-color;
+      line-height: 100px;
+      text-decoration: none;
+      font-weight: bold;
+      @include mq(sm) {
+        font-size: 36px;
+        line-height: 70px;
+      }
+      &:hover {
+        opacity: .6;
+        cursor: pointer;
+        @include mq(sm) {
+          opacity: 1;
+        }
+      }
+    }
+
+    .drawer-hamburger {
+      padding-top: 24px;
+      padding-bottom: 41px;
+    }
+
+    .drawer-nav {
+      @include mq(md) {
+        position: static !important;
+        background-color: transparent;
+        width: auto;
+        margin-left: auto;
+      }   
+    }
+    .header-nav-list {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      @include mq(sm) {
+        display: block;
+      }
+      li {
+        display: block;
+        @include mq(sm) {
+          margin-left: 40px;
+        }
+      }
+    }
+    .nav-list {
+      font-size: 24px;
+      color: $title-color;
+      text-decoration: none;
+      line-height: 100px;
+      transition: all .3s;
+      display: block;
+      &:hover {
+        opacity: .6;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+  .drawer-overlay {
+    opacity: 0 !important;
+  }
+  .header-overlay {
+    opacity: 1 !important;
+    background-color: rgba(10, 7, 14, 0.6) !important;
+  }
+
+.drawer-open {
+  .drawer-hamburger-icon {
+    &::before {
+      background-color: $theme-color;
+      height: 3px;
+    }
+    &::after {
+      background-color: $theme-color;
+      height: 3px;
+    }
+  }
+}
+
+.header .container .drawer-nav {
+  width: 609.5/1080 * 100%;
+  min-width: 430px;
+  margin-left: auto;
+  @include mq(sm) {
+    width: auto;
+    min-width: 0;
+  }
+}
+
+/*==========================================================
+hero-area
+==========================================================*/
+.hero-area {
+  width: 100%;
+  height: 100vh;
+  background: url(../images/hero-background.jpg) no-repeat top center / cover;
+  position: relative;
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent linear-gradient(180deg, #0A070E34 0%, #5B595EDD 100%) 0% 0% no-repeat;
+  }
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    transform: translate3d(-50%, -40%, 0);
+    .hero-area-contents {
+      position: relative;
+      width: 100%;
+      display: flex;
+      @include mq(sm) {
+        display: block;
+      }
+      .hero-icon-area {
+        width: 34.259%;
+        @include mq(sm) {
+          width: 70%;
+          margin: auto;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .hero-text-area {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 46.0185%;
+        margin-left: auto;
+        color: $theme-color;
+        @include mq(sm) {
+          position: static;
+          transform: translateY(0);
+          margin: auto;
+          width: 100%;
+        }
+        .my-name {
+          font-size: 32px;
+          @include mq(sm) {
+            font-size: 28px;
+            text-align: center;
+          }
+        }
+        .my-info {
+          padding-top: 50px;
+          @include mq(sm) {
+            
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*==========================================================
+service
+==========================================================*/
+.service {
+  padding-top: 50px;
+  @include mq(sm) {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+  .service-contents-area {
+    display: flex;
+    @include mq(sm) {
+      display: block;
+    }
+    .service-area {
+      width: 50%;
+      @include mq(sm) {
+        width: 100%;
+      }
+      .service-img-container {
+        width: 100%;
+        padding-top: 400/540 * 100%;
+        position: relative;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .service-contents-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: 32px;
+        color: $theme-color;
+        text-align: center;
+        padding-top: 34px;
+        padding-bottom: 34px;
+        background-color: rgba(10, 7, 14, 0.6);
+        @include mq(sm) {
+          font-size: 24px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+      }
+      .service-text {
+        color: $font-color;
+        width: 84.6296%;
+        margin: auto;
+        margin-top: 50px;
+        @include mq(sm) {
+          margin-top: 15px;
+          width: 100%;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+
+/*==========================================================
+price
+==========================================================*/
+.price {
+  background-color: $theme-color;
+  .price-table {
+    width: 74.0740%;
+    margin: auto;
+    @include mq(sm) {
+      width: 100%;
+    }
+    .table-row {
+      display: flex;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-top: solid 2px #707070;
+      border-bottom: solid 2px #707070;
+      @include mq(sm) {
+        display: block;
+        text-align: center;
+      }
+      & + .table-row {
+        border-top: transparent;
+      }
+      .service-item {
+        font-size: 24px;
+        padding-left: 30px;
+        @include mq(sm) {
+          padding-left: 0;
+        }
+      }
+      .table-price {
+        font-size: 24px;
+        margin-left: auto;
+        padding-right: 30px;
+        @include mq(sm) {
+          margin-top: 15px;
+          padding-right: 0;
+        }
+      }
+    }
+    .price-caution {
+      font-size: 16px;
+    }
+  }
+  .util-link-container {
+    margin-top: 50px;
+  }
+}
+
+/*==========================================================
+philosophy
+==========================================================*/
+.philosophy {
+  .container {
+    @include mq(sm) {
+      width: 100%;
+    }
+    .section-title {
+      @include mq(sm) {
+        width: 90%;
+        margin: auto;
+      }
+    }
+  }
+}
+.philosophy-contents {
+  color: $theme-color;
+  width: 100%;
+  position: relative;
+  .philosophy-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent linear-gradient(90deg, #0A070ECB 0%, #312E34 0%, #5A585D00 100%, #5B595E 100%) 0% 0% no-repeat;
+    @include mq(sm) {
+      background-color: #0A070E;
+      opacity: .7;
+    } 
+  }
+  .philosophy-title {
+    font-size: 32px;
+    padding-left: 30px;
+    padding-top: 30px;
+    position: relative;
+    @include mq(sm) {
+      font-size: 26px;
+      padding-left: 15px;
+    }
+    span {
+      position: relative;
+      padding-right: 30px;
+      @include mq(sm) {
+        padding-right: 15px;
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: -6px;
+        left: 0;
+        right: 0;
+        width: 35px;
+        height: 2px;
+        background-color: $theme-color;
+        @include mq(sm) {
+          width: 28px;
+        }
+      }
+    }
+  }
+  .philosophy-text {
+    position: relative;
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 54.6296%;
+    letter-spacing: 0px;
+    @include mq(sm) {
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+      font-size: 16px;
+    }
+  }
+}
+
+.philosophy-first {
+  background: url(../images/philosophy1.jpg) no-repeat center center / cover;
+}
+.philosophy-second {
+  background: url(../images/philosophy2.jpg) no-repeat center center / cover;
+}
+.philosophy-third {
+  background: url(../images/philosophy3.jpg) no-repeat center center / cover;
+  .philosophy-title {
+    span {
+      padding-right: 15px;
+      @include mq(sm) {
+        padding-right: 3px;
+      }
+    }
+  }
+}
+
+/*==========================================================
+works
+==========================================================*/
+.works {
+  background-color: $theme-color;
+  .section-title {
+    padding-bottom: 20px;
+  }
+  .works-description {
+    padding-bottom: 50px;
+    font-weight: bold;
+    @include mq(sm) {
+      padding-bottom: 30px; 
+    }
+  }
+  .works-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    @include mq(sm) {
+    }
+    .works-item {
+      width: 32.4074%;
+      position: relative;
+      padding-top: 235/1080 * 100%;
+      margin-right: 15/1080 * 100%;
+      overflow: hidden;
+      &:hover {
+        .works-overlay {
+          background-color: rgba(10, 7, 14, .8);
+        }
+        .works-detail {
+          opacity: 1;
+        }
+        img {
+          transform: scale(1.05);
+        }
+      }
+      @include mq(sm) {
+        width: 100%;
+        margin-right: 0;
+        padding-top: 0;
+        margin-top: 15px;
+      }
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      &:nth-child(n+4) {
+        margin-top: 15px;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        transition-duration: .5s;
+        @include mq(sm) {
+          position: static;
+        }
+      }
+      .works-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(10, 7, 14, 0);
+        border-radius: 10px;
+        transition: all .7s;
+      }
+      .works-detail {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        opacity: 0;
+      }
+      .work-category {
+        font-size: 18px;
+        color: #8C92A5;
+        margin-top: 50px;
+      }
+      .work-title {
+        font-size: 20px;
+        color: $theme-color;
+      }
+      .duration {
+        font-size: 18px;
+        color: #8C92A5;
+      }
+    }
+  }
+}
+
+/*==========================================================
+contact
+==========================================================*/
+.contact {
+  .section-title {
+    padding-bottom: 20px;
+  }
+  .contact-description {
+    padding-bottom: 50px;
+    @include mq(sm) {
+      padding-bottom: 30px; 
+    }
+  }
+  form {
+    padding-bottom: 50px;
+    input {
+      display: block;
+      height: 50px;
+      color: $title-color;
+      font-size: 16px;
+      font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+      line-height: 50px;
+      padding-left: 30px;
+      background-color: $theme-color;
+      border: solid 1px #E0E0E0;
+      &:focus {
+        outline: solid 1px $accent-color;
+      }
+    }
+    .contact-info {
+      display: flex;
+      justify-content: space-between;
+      @include mq(sm) {
+        display: block;
+      }
+      input {
+        width: 48.1481%;
+        @include mq(sm) {
+          width: 100%;
+        }
+        & + input {
+          @include mq(sm) {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+    .contact-title-area {
+      margin-top: 20px;
+      @include mq(sm) {
+        margin-top: 15px;
+      }
+      input {
+        width: 100%;
+      }
+    }
+    .contact-message-area {
+      margin-top: 20px;
+      @include mq(sm) {
+        margin-top: 15px;
+      }
+      .message {
+        display: block;
+        font-size: 16px;
+        font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+        color: $title-color;
+        width: 100%;
+        height: 200px;
+        padding-left: 30px;
+        padding-top: 14px;
+        background-color: $theme-color;
+        border: solid 1px #E0E0E0;
+      }
+    }
+    .submit {
+      text-align: right;
+      margin-top: 20px;
+      @include mq(sm) {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .submit-btn {
+        font-size: 20px;
+        padding: 15px 30px;
+        line-height: 20px;
+        border: none;
+        @include mq(sm) {
+          width: 270/337.5 * 100%;
+          max-width: 270px;
+          font-size: 24px;
+          padding: 34px 111/690.3 * 100%;
+        }
+      }
+    }
+  }
+}
+.contact-message {
+  text-align: center;
+  margin-top: 60px;
+  display: none;
+  &.-error {
+      color: #f00;
+  }
+}
+
+input::-webkit-input-placeholder {
+  font-size: 16px;
+  font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+}
+input:-moz-placeholder {
+  font-size: 16px;
+  font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+}
+input::-moz-placeholder {
+  font-size: 16px;
+  font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+}
+input:-ms-input-placeholder {
+  font-size: 16px;
+  font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+}
+
+textarea::-webkit-input-placeholder {
+  font-size: 16px;
+  font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+}
+textarea:-moz-placeholder {
+  font-size: 16px;
+  font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+}
+textarea::-moz-placeholder {
+  font-size: 16px;
+  font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+}
+textarea:-ms-input-placeholder {
+  font-size: 16px;
+  font-family: "hiragino Mincho ProN", "Yu Mincho", sans-serif;
+}
+
+/*==========================================================
+footer
+==========================================================*/
+footer {
+  background-color: #454955;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .footer-logo {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 48px;
+    color: $theme-color;
+    text-decoration: none;
+    @include mq(sm) {
+      font-size: 36px;
+      display: block;
+      text-align: center; 
+    }
+    &:hover {
+      cursor: pointer;
+      opacity: .6;
+      @include mq(sm) {
+        opacity: 1;
+      }
+    }
+  }
+  .footer-contents {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 20px;
+    @include mq(sm) {
+      display: block;
+      margin-top: 10px; 
+    }
+    .sns-icon {
+      display: flex;
+      @include mq(sm) {
+        justify-content: center;
+      }
+      a {
+        text-decoration: none;
+        display: block;
+        height: 40px;
+        &:hover {
+          cursor: pointer;
+          opacity: .6;
+          @include mq(sm) {
+            opacity: 1;
+          }
+        }
+      }
+      i {
+        font-size: 40px;
+        margin-right: 20px;
+        color: $theme-color;
+        width: 40px;
+        height: 40px;
+        @include mq(sm) {
+          margin-right: 10px;
+          font-size: 32px;
+          width: 32px;
+          height: 32px;
+        }
+      }
+      .fa-twitter {
+        color: #454955;
+        background-color: $theme-color;
+        font-size: 30px;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 999px;
+        @include mq(sm) {
+          font-size: 24px;
+          line-height: 32px;
+          margin-top: .3px;
+        }
+      }
+    }
+    .copyright {
+      color: $theme-color;
+      margin-left: auto;
+      align-items: flex-end;
+      @include mq(sm) {
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+  }
+  .totop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 40px;
+    display: none;
+    transition: all .5s;
+    &:hover {
+      cursor: pointer;
+      opacity: .6;
+      @include mq(sm) {
+        opacity: 1;
+      }
+    }
+    @include mq(sm) {
+      bottom: 20px;
+      right: 20px;     
+    }
+  }
+}
